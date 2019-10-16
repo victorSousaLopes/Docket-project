@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Docket: Cadastro</title>
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://www.docket.com.br/assets/docket/meta/favicon-32x32.png">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab|Montserrat&display=swap" rel="stylesheet">
+    <script src="./assets/src/js/Getapi.js"></script>
+    <script src="./assets/src/js/index.js"></script>
+    <!-- set color on device top in chrome -->
+    <meta name="theme-color" content="#5c4688fa">
+    <meta name="description"
+        content="Preencha o formulário abaixo e venha trabalhar em uma das startups mais desejadas do Brasil!">
+</head>
+
+<body>
+    <!-- header and logo -->
+    <header class="main-header">
+        <img src="./assets/images/logo_white.svg" alt="" class="logo">
+    </header>
+    <!-- main task -->
+<section class="section-main">
+    <div class="container p-4">
+        <div class="main-content card-columns justify-content-center" id="main-content">
+            <!-- Card cad -->
+            <div class="card" id="card">
+                <div class="card-block card-left p-4">
+                    <h3 class="card-title mb-3">Venha trabalhar na Docket</h3>
+                    <p class="p-info mb-4">Preencha o formulário abaixo e venha trabalhar em uma das startups mais
+                        desejadas do Brasil!
+                    </p>
+                    <h5 class="mb-4">Dados pessoais</h5>
+                    <form clas>
+                        <!-- Name -->
+                        <div class="form-group mb-4">
+                            <label for="fullName"><span class="required-symbol">*</span>&ThinSpace;Nome
+                                completo:</label>
+                            <input type="text" class="form-control" id="fullName" aria-describedby="full-name"
+                                placeholder="João Henrique Silva e Souza">
+                            <small id="full-Name" class="form-text text-muted">O nome é essêncial para identificação
+                                do candidato, confirme-o antes de enviá-lo!</small>
+                        </div>
+                        <!-- email -->
+                        <div class="form-group mb-4">
+                            <label for="email"><span class="required-symbol">*</span>&ThinSpace;E-mail</label>
+                            <input type="text" class="form-control" id="email" aria-describedby="email-candidate"
+                                placeholder="joaohenriquedasilva@meuemail.com.br">
+                            <small id="email-candidate" class="form-text text-muted">Digite o seu melhor
+                                e-mail!</small>
+                        </div>
+                        <!-- Phone number one -->
+                        <div class="row mb-4">
+                            <div class="col-lg-6">
+                                <label for="number-1"><span class="required-symbol">*</span>&ThinSpace;Telefone
+                                    1:</label>
+                                <input type="text" id="number-1" class="form-control col-lg-12"
+                                    aria-describedby="number-one" placeholder="(11)&ThinSpace;9999-9999">
+                                <small id="number-one" class="form-text text-muted">Obrigatório.</small>
+                            </div>
+                            <!-- Phone number two -->
+                            <div class="col-lg-6">
+                                <label for="number-2">Telefone 2:</label>
+                                <input type="text" id="number-2" class="form-control col-lg-12"
+                                    aria-describedby="number-two" placeholder="(11)&ThinSpace;8888-8888">
+                                <small id="number-two" class="form-text text-muted">Opcional.</small>
+                            </div>
+                        </div>
+                        <button id="btn-enviar" type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Card Token -->
+            <div class="card p-1" id="card-right" style="border-top: 9px solid #ccc8c8; background-color: #f5f5f5;">
+                <div class="card-block card-right p-4">
+                    <div class="container con-content">
+                        <h4 class="card-title">FICHA DO CANDIDATO</h4>
+                        <p class="txt-muted card-text text-muted font-italic">Preencha o formulário e clique em
+                            "Enviar"
+                            após conferir atentamente</p>
+                        <div class="row">
+                            <div class="info-user col-lg-12 mb-3">
+                                <span class="info-item">Nome completo:</span>
+                                <span class="info-item-value mb-2" id="cadidate-name"></span>
+                            </div>
+                            <div class="info-user col-lg-12 mb-3">
+                                <span class="info-item">E-mail:</span>
+                                <span class="info-item-value mb-2" id="cadidate-email"></span>
+                            </div>
+                            <div class="info-user col-lg-12 mb-3">
+                                <span class="info-item">Telefone 1:</span>
+                                <span class="info-item-value mb-2" id="cadidate-number-one"></span>
+                            </div>
+                            <div class="info-user col-lg-12 mb-3">
+                                <span class="info-item">Telefone 2:</span>
+                                <span class="info-item-value mb-2" id="cadidate-number-two"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container con-content">
+                    <h4 class="mb-4">Seus projetos:</h4>
+                    <div class="slider">
+                        <div class="slide-track" id="slide-track">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="container">
+                        <button class="btn btn-dark mt-5" id="refresh-page">Atualizar a página</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- footer -->
+    <footer class="footer">
+        <p class="title-footer">DOCKET &copy;&ThinSpace;2019 </p>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
