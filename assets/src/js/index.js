@@ -6,15 +6,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //focus method for put and remove '()' on number input, 
     //detail if you click outside and then inside again then the value remains the same
     document.getElementById('number-1').addEventListener('focus', (e) => {
-        e.target.value == '' || e.target.value == null ? e.target.value = '()' : e.target.value;
+        e.target.value == '' || e.target.value == null ? e.target.value = '(' : e.target.value;
     });
-
+    
+  
     document.getElementById('number-1').addEventListener('blur', (e) => {
         e.target.value == '' || e.target.value == '()' ? e.target.value = '' : e.target.value;
     });
 
     document.getElementById('number-2').addEventListener('focus', (e) => {
-        e.target.value == '' || e.target.value == null ? e.target.value = '()' : e.target.value;
+        e.target.value == '' || e.target.value == null ? e.target.value = '(' : e.target.value;
     });
 
     document.getElementById('number-2').addEventListener('blur', (e) => {
@@ -99,7 +100,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (name === '') {
             showAlert('name', 'Por-favor insira seu "NOME" no local indicado!', 'danger');
         }
-        
+
         // get Name if regex
         const newName = name.match(/([a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]+).*?/g);
         
