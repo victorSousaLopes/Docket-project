@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             $(div).insertAfter(btn);
         }
 
+     
         //timeout for remove alert
         setTimeout(() => {
             //remove border color
@@ -190,6 +191,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             // spinner
             $(`<div class="col-lg-12 text-center" id="spin"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>`).insertAfter('.card-right');
+            document.getElementById('success').style.display = '';
 
             setTimeout(() => {
                 $('#spin').remove();
