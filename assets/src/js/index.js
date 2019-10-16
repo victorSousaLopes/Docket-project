@@ -99,24 +99,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (name === '') {
             showAlert('name', 'Por-favor insira seu "NOME" no local indicado!', 'danger');
         }
-
-        if(name.match(/\d*/g)) {
-            document.getElementById('fullName').style.border = "2px solid red";
-            showAlert('name', 'Não conseguimos identificar o nome', 'danger');
-        } else {
+        
         // get Name if regex
         const newName = name.match(/([a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]+).*?/g);
         
-            if (newName) {
-                document.getElementById('fullName').style.border = "2px solid green";
-                obj.name = newName.join(' ');
-                //I need more time for capitalize the first letter without use text-transform: capitalize in a single letter 
-                //like Silva E Silva to Silva e Silva
-            } else {
-                document.getElementById('fullName').style.border = "2px solid red";
-                showAlert('name', 'Não conseguimos identificar o nome', 'danger');
-            }
-
+        if (newName) {
+            document.getElementById('fullName').style.border = "2px solid green";
+            obj.name = newName.join(' ');
+            //I need more time for capitalize the first letter without use text-transform: capitalize in a single letter 
+            //like Silva E Silva to Silva e Silva
+        } else {
+            document.getElementById('fullName').style.border = "2px solid red";
+            showAlert('name', 'Não conseguimos identificar o nome', 'danger');
         }
 
         //Email
